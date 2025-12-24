@@ -1,30 +1,67 @@
 # Vamoose Landing Page Recommendations
 
-Documented: 2025-12-21
-Status: Pending Review
+Documented: 2025-12-24
+Last Updated: 2025-12-24
+
+---
+
+## Session Log - Dec 24, 2025
+
+### Completed This Session
+
+1. **Mobile navigation** - Added hamburger menu (`components/Header.tsx`)
+2. **Waitlist form** - Full Supabase + Resend integration
+   - Form component with loading/success/error states (`components/WaitlistForm.tsx`)
+   - API route (`app/api/waitlist/route.ts`)
+   - Stores emails in Supabase `waitlist` table
+   - Sends confirmation email via Resend
+3. **Fixed broken links** - Created Privacy Policy and Terms pages
+   - `/privacy` - Privacy Policy page
+   - `/terms` - Terms of Service page
+   - Removed "Guide: Wildfire Prep" link (no content yet)
+4. **Updated copy** - Removed Pacific Northwest regional messaging (now generic)
+5. **Deployed to Vercel** - Pushed to GitHub, connected to Vercel
+
+### Backend Configuration (Already Done)
+
+**Supabase (Organization: Vamoose)**
+- Project URL: `https://yzgnikoibgfawyhdbmgu.supabase.co`
+- Table: `waitlist` (id, email, created_at)
+
+**Resend (Separate account from StaffCue)**
+- Domain: `vamoose.io` (verified)
+- Sends from: `noreply@vamoose.io`
+
+**Vercel**
+- Repo: `brownsterbits/vamoose-web`
+- Needs environment variables set in Vercel dashboard:
+  - `SUPABASE_URL`
+  - `SUPABASE_SERVICE_ROLE_KEY`
+  - `RESEND_API_KEY`
+
+### Immediate Next Steps
+
+1. **Verify Vercel deployment**
+   - [ ] Add environment variables in Vercel dashboard
+   - [ ] Test form submission on production URL
+   - [ ] Connect custom domain (vamoose.io) via DNS
+
+2. **User mentioned design feedback** - To be discussed
+
+3. **User mentioned "hint harder at value"** - Content/copy improvements before social push
 
 ---
 
 ## Critical Issues
 
 ### 1. No mobile navigation
-- **Problem**: Nav links hidden on mobile (`hidden md:flex`) with no hamburger menu
-- **Impact**: Mobile users can't navigate the page
-- **Solution**: Add hamburger menu component with slide-out or dropdown
-- **Status**: [ ] Pending
+- **Status**: [x] DONE - `components/Header.tsx`
 
 ### 2. Form doesn't work
-- **Problem**: Email form has no `action`, no handler, no success/error states
-- **Impact**: Visitors can't actually join the waitlist
-- **Solution**: Integrate with Mailchimp, ConvertKit, Resend, or Supabase
-- **Requirements**: Loading spinner, success toast, error handling, consider double opt-in
-- **Status**: [ ] Pending
+- **Status**: [x] DONE - Supabase + Resend integration
 
 ### 3. Dead links
-- **Problem**: Privacy Policy, Terms, and "Guide: Wildfire Prep" all link to `#`
-- **Impact**: Broken user experience, not App Store ready
-- **Solution**: Create actual pages or remove links until ready
-- **Status**: [ ] Pending
+- **Status**: [x] DONE - Privacy/Terms pages created, Guide link removed
 
 ---
 
@@ -35,6 +72,7 @@ Status: Pending Review
 - **Impact**: Poor appearance when shared on social media
 - **Solution**: Add OG image, title, description; Twitter card tags
 - **Status**: [ ] Pending
+- **Note**: User wants to improve value proposition content first
 
 ### 5. App preview imagery
 - **Problem**: Hero section has gradient blur placeholder instead of real visuals
@@ -59,13 +97,12 @@ Status: Pending Review
 ### 8. Accessibility improvements
 - **Problems**:
   - Emojis used as icons lack screen reader context
-  - Form input uses placeholder instead of visible label
+  - Form input uses placeholder instead of visible label (FIXED - has sr-only label now)
   - Color contrast not verified
 - **Solutions**:
   - Add `aria-hidden="true"` to emojis with separate SR text
-  - Add visible `<label>` element to email input
   - Run contrast checker on primary/secondary colors
-- **Status**: [ ] Pending
+- **Status**: [ ] Partially done
 
 ### 9. Cite statistics sources
 - **Problem**: Stats like "55 billion-dollar disasters" and "12 days" lack sources
@@ -94,13 +131,11 @@ Status: Pending Review
 - **Status**: [ ] Pending
 
 ### 13. Legal pages
-- Create actual Privacy Policy content
-- Create Terms of Service content
-- Required before App Store launch
-- **Status**: [ ] Pending
+- **Status**: [x] DONE - Basic content created
+- Note: May need legal review before App Store submission
 
 ### 14. Urgency/scarcity messaging
-- "Limited beta spots for PNW families"
+- "Limited beta spots"
 - "Join X families already on the list"
 - Launch countdown (if date is set)
 - **Status**: [ ] Pending
@@ -112,22 +147,31 @@ Status: Pending Review
 
 ---
 
-## Code Quality Notes
+## Files Changed This Session
 
-- Unused `Image` import from `next/image` at `app/page.tsx:1`
-- Step numbers use `text-secondary/5` (5% opacity) - nearly invisible
-- Could extract repeated card styles into Tailwind `@apply` components
+**New Files:**
+- `components/Header.tsx` - Mobile-responsive header with hamburger menu
+- `components/WaitlistForm.tsx` - Form with full state management
+- `app/api/waitlist/route.ts` - API endpoint for Supabase + Resend
+- `app/privacy/page.tsx` - Privacy Policy page
+- `app/terms/page.tsx` - Terms of Service page
+- `.env.example` - Template for environment variables
+- `.env.local` - Local environment variables (gitignored)
+
+**Modified Files:**
+- `app/page.tsx` - Uses new Header/WaitlistForm components, updated copy
+- `tsconfig.json` - Added path aliases (`@/*`)
+- `package.json` - Added @supabase/supabase-js, resend dependencies
 
 ---
 
-## Suggested Priority Order
+## To Resume
 
-1. Form integration (critical - can't capture leads without it)
-2. Mobile nav (critical - large portion of traffic)
-3. Social meta tags (high - needed before sharing)
-4. App mockups (high - visual credibility)
-5. Everything else as time permits
+1. Verify Vercel env vars are set and production form works
+2. Discuss design feedback user mentioned
+3. Improve value proposition copy before social meta tags
+4. Continue with remaining recommendations
 
 ---
 
-*Review one-by-one with Claude Code when ready.*
+*Last worked on: Dec 24, 2025 with Claude Code*
