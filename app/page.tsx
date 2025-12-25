@@ -106,19 +106,19 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            <div className="relative pl-8 md:pl-0 pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-1.5rem] md:left-0 text-6xl font-black text-secondary/5 font-sans">01</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Build Your Profile</h3>
+            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
+              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">01</span>
+              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Build Your Profile</h3>
               <p className="text-secondary/70">Tell us who you protect (kids, pets, elders) and where you live. We customize your risk profile.</p>
             </div>
-            <div className="relative pl-8 md:pl-0 pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-1.5rem] md:left-0 text-6xl font-black text-secondary/5 font-sans">02</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Pack Your Bags</h3>
+            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
+              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">02</span>
+              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Pack Your Bags</h3>
               <p className="text-secondary/70">Follow our smart checklist to assemble your emergency kit. Mark items off as you go.</p>
             </div>
-            <div className="relative pl-8 md:pl-0 pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-1.5rem] md:left-0 text-6xl font-black text-secondary/5 font-sans">03</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Invite Your Pack</h3>
+            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
+              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">03</span>
+              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Invite Your Pack</h3>
               <p className="text-secondary/70">Send a secure deep-link to your family. Everyone gets the plan on their phone, offline-ready.</p>
             </div>
           </div>
