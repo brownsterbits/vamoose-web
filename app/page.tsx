@@ -19,11 +19,11 @@ export default function Home() {
             <p className="text-xl text-secondary/70 mb-10 max-w-lg leading-relaxed">
               The average time between natural disasters has dropped to just 12 days. Don't simply hope for the best. Be the one who is ready.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#join-waitlist" className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:-translate-y-0.5 hover:shadow-xl transition-all">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#join-waitlist" className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:-translate-y-0.5 hover:shadow-xl transition-all text-center">
                 Get Early Access
               </a>
-              <a href="#how-it-works" className="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary hover:text-white transition-all">
+              <a href="#how-it-works" className="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary hover:text-white transition-all text-center">
                 Learn More
               </a>
             </div>
@@ -54,7 +54,7 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <div id="mission" className="text-center max-w-3xl mx-auto mb-20 scroll-mt-24">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-secondary">Calm in Chaos</h2>
             <p className="text-lg text-secondary/70">
               Vamoose creates order when everything else feels chaotic. Designed for real-world emergencies where cell towers fail and seconds count.
@@ -106,19 +106,25 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">01</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Build Your Profile</h3>
+            <div className="flex flex-col md:block pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4 relative">
+              <div className="flex items-end gap-3 mb-2 md:block md:mb-0">
+                <span className="text-6xl font-black text-secondary/10 font-sans leading-[0.75] md:absolute md:top-[-2.5rem] md:left-0 md:bg-off-white md:pr-4">01</span>
+                <h3 className="text-2xl font-bold text-secondary md:mb-4 md:pt-0">Build Your Profile</h3>
+              </div>
               <p className="text-secondary/70">Tell us who you protect (kids, pets, elders) and where you live. We customize your risk profile.</p>
             </div>
-            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">02</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Pack Your Bags</h3>
+            <div className="flex flex-col md:block pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4 relative">
+              <div className="flex items-end gap-3 mb-2 md:block md:mb-0">
+                <span className="text-6xl font-black text-secondary/10 font-sans leading-[0.75] md:absolute md:top-[-2.5rem] md:left-0 md:bg-off-white md:pr-4">02</span>
+                <h3 className="text-2xl font-bold text-secondary md:mb-4 md:pt-0">Pack Your Bags</h3>
+              </div>
               <p className="text-secondary/70">Follow our smart checklist to assemble your emergency kit. Mark items off as you go.</p>
             </div>
-            <div className="relative pl-8 md:pl-0 pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4">
-              <span className="absolute left-[-1.2rem] top-0 md:top-[-2.5rem] md:left-0 text-6xl font-black text-secondary/10 font-sans bg-off-white pr-4">03</span>
-              <h3 className="text-2xl font-bold mb-4 text-secondary pt-4 md:pt-0">Invite Your Pack</h3>
+            <div className="flex flex-col md:block pt-4 md:pt-8 border-l-4 border-secondary/10 md:border-l-0 md:border-t-4 relative">
+              <div className="flex items-end gap-3 mb-2 md:block md:mb-0">
+                <span className="text-6xl font-black text-secondary/10 font-sans leading-[0.75] md:absolute md:top-[-2.5rem] md:left-0 md:bg-off-white md:pr-4">03</span>
+                <h3 className="text-2xl font-bold text-secondary md:mb-4 md:pt-0">Invite Your Pack</h3>
+              </div>
               <p className="text-secondary/70">Send a secure deep-link to your family. Everyone gets the plan on their phone, offline-ready.</p>
             </div>
           </div>
