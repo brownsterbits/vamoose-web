@@ -9,17 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#FF5722',   // Signal Orange
-        secondary: '#263238', // Deep Slate
-        accent: '#FFC107',    // Safety Yellow
-        'off-white': '#F5F5F7',
-        vamoose: {
-          primary: "#2563EB",    // Blue - trust, safety
-          secondary: "#10B981",  // Green - go, prepared
-          accent: "#F59E0B",     // Amber - alert, attention
-          dark: "#1E293B",       // Slate dark
-          light: "#F8FAFC",      // Slate light
-        },
+        primary: '#FF5722',   // Signal Orange - CTAs, highlights
+        secondary: '#263238', // Deep Slate - text, dark sections
+        accent: '#FFC107',    // Safety Yellow - alerts, warnings
+        'off-white': '#F5F5F7', // Background
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
