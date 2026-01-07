@@ -14,8 +14,10 @@ jobs:
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" https://yzgnikoibgfawyhdbmgu.supabase.co/auth/v1/health)
           echo "Health check response: $response"
-          if [ "$response" -eq 200 ]; then
-            echo "✅ Supabase is healthy and active"
+          # Any response (2xx, 4xx) means Supabase is active
+          # Only 5xx or connection failures indicate a problem
+          if [ "$response" -ge 200 ] && [ "$response" -lt 500 ]; then
+            echo "✅ Supabase is responding (project active)"
           else
             echo "⚠️ Unexpected response code: $response"
             exit 1
