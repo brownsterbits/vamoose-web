@@ -1,0 +1,22 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Run every 5 days at midnight UTC
+    - cron: '0 0 */5 * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase health endpoint
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://yzgnikoibgfawyhdbmgu.supabase.co/auth/v1/health)
+          echo "Health check response: $response"
+          if [ "$response" -eq 200 ]; then
+            echo "✅ Supabase is healthy and active"
+          else
+            echo "⚠️ Unexpected response code: $response"
+            exit 1
+          fi
