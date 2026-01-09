@@ -1,7 +1,34 @@
 # Vamoose Landing Page Recommendations
 
 Documented: 2025-12-24
-Last Updated: 2025-12-24
+Last Updated: 2026-01-08
+
+---
+
+## Session Log - Jan 8, 2026
+
+### Completed This Session
+
+1. **Tech stack review** - Documented full stack (Next.js 16, React 18, TypeScript, Tailwind, Supabase, Resend, Vercel)
+
+2. **Supabase keep-alive** - Prevents free tier from pausing after 7 days inactivity
+   - Initially implemented Vercel cron approach
+   - Switched to GitHub Actions (simpler, no env vars needed)
+   - Workflow: `.github/workflows/supabase-keepalive.yml`
+   - Runs every 5 days, pings Supabase health endpoint
+   - Fixed to accept 401 response (auth required but project active)
+   - **Tested and passing** ✅
+
+3. **Architecture decision documented** - OK to use Supabase for marketing site + Firebase for mobile app (different use cases, no shared data needed)
+
+### Commits This Session
+- `df7e35a` - Add Supabase keep-alive via GitHub Actions
+- `9c9a0df` - Fix keep-alive to accept 401 as valid response
+
+### To Resume
+1. All keep-alive work is complete and tested
+2. Continue with remaining recommendations below (social meta tags, app imagery, etc.)
+3. Note: Another project also has keep-alive workflow that may need the same 401 fix
 
 ---
 
