@@ -1,0 +1,198 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  min-height: 100vh;
+  /* Ensure font smoothing matches reference if not already global */
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(38, 50, 56, 0.08);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #263238;
+  margin-bottom: 32px;
+  letter-spacing: -0.5px;
+}
+
+.logo .dot {
+  color: #FF5722;
+}
+
+.iconCircle {
+  width: 72px;
+  height: 72px;
+  background: rgba(255, 87, 34, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.iconCircle svg {
+  width: 36px;
+  height: 36px;
+  color: #FF5722;
+}
+
+.h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #263238;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(38, 50, 56, 0.7);
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.codeContainer {
+  background: #F5F5F7;
+  border: 2px solid rgba(38, 50, 56, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.codeLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(38, 50, 56, 0.5);
+  margin-bottom: 8px;
+}
+
+.codeValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #263238;
+  letter-spacing: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.appStoreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #263238;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.appStoreBtn:hover {
+  background: #37474F;
+}
+
+.appStoreBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+  color: rgba(38, 50, 56, 0.4);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(38, 50, 56, 0.1);
+}
+
+.instructions {
+  font-size: 14px;
+  color: rgba(38, 50, 56, 0.6);
+  line-height: 1.6;
+}
+
+.instructions strong {
+  color: rgba(38, 50, 56, 0.8);
+  font-weight: 600;
+}
+
+.steps {
+  text-align: left;
+  margin-top: 12px;
+}
+
+.step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 87, 34, 0.1);
+  color: #FF5722;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stepText {
+  padding-top: 2px;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: rgba(38, 50, 56, 0.4);
+}
+
+.footer a {
+  color: rgba(38, 50, 56, 0.5);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #FF5722;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 36px 24px;
+    border-radius: 20px;
+  }
+
+  .codeValue {
+    font-size: 26px;
+  }
+}

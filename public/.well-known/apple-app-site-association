@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "6VM5W2W65K.io.vamoose.app",
+        "paths": ["/join/*"]
+      }
+    ]
+  }
+}
