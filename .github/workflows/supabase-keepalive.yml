@@ -2,23 +2,25 @@ name: Supabase Keep-Alive
 
 on:
   schedule:
-    # Run every 5 days at midnight UTC
-    - cron: '0 0 */5 * *'
-  workflow_dispatch: # Allow manual trigger
+    - cron: '0 12 */4 * *'
+  workflow_dispatch:
 
 jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase health endpoint
+      - name: Query Supabase database (real activity ping)
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" https://yzgnikoibgfawyhdbmgu.supabase.co/auth/v1/health)
-          echo "Health check response: $response"
-          # Any response (2xx, 4xx) means Supabase is active
-          # Only 5xx or connection failures indicate a problem
+          response=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+            "https://yzgnikoibgfawyhdbmgu.supabase.co/rest/v1/")
+          echo "Response: $response"
           if [ "$response" -ge 200 ] && [ "$response" -lt 500 ]; then
-            echo "✅ Supabase is responding (project active)"
+            echo "✅ Supabase active (DB query registered)"
           else
-            echo "⚠️ Unexpected response code: $response"
+            echo "❌ Unexpected response: $response"
             exit 1
           fi
